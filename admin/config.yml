@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: liberalreporters/babatundeogunladewebsite
+  repo: liberalreporters/babs4oyha
   branch: main
   base_url: https://YOUR-OAUTH-SERVICE-DOMAIN
   auth_endpoint: auth

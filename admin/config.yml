@@ -1,0 +1,103 @@
+backend:
+  name: github
+  repo: liberalreporters/babatundeogunladewebsite
+  branch: main
+  base_url: https://YOUR-OAUTH-SERVICE-DOMAIN
+  auth_endpoint: auth
+site_url: https://babatundeogunlade.com
+display_url: https://babatundeogunlade.com
+locale: en
+media_folder: "assets/images/cms"
+public_folder: "/assets/images/cms"
+publish_mode: editorial_workflow
+collections:
+  - name: press
+    label: Press Centre
+    files:
+      - label: Press Centre Feed
+        name: press_feed
+        file: data/press-centre.json
+        fields:
+          - {label: Schema Version, name: schemaVersion, widget: hidden, default: 1}
+          - label: Items
+            name: items
+            widget: list
+            summary: "{{fields.title}} — {{fields.date}}"
+            fields:
+              - {label: ID, name: id, widget: string}
+              - {label: Headline, name: title, widget: string}
+              - {label: Date, name: date, widget: string}
+              - {label: Category, name: category, widget: select, options: ["Press Release", "Official Statement", "Announcement", "Media Advisory", "Public Notice", "Media Coverage"]}
+              - {label: Summary, name: summary, widget: text}
+              - {label: Full Text, name: body, widget: markdown, required: false}
+              - {label: Image, name: image, widget: image, required: false}
+              - {label: Image Description, name: imageAlt, widget: string, required: false}
+              - {label: Author / Issuing Office, name: author, widget: string, default: "BABS Media Team"}
+              - {label: Status, name: status, widget: select, options: ["draft", "published"], default: "draft"}
+              - {label: Related Link, name: url, widget: string, required: false}
+              - {label: Download URL, name: download, widget: string, required: false}
+  - name: news
+    label: News & Updates
+    files:
+      - label: News Feed
+        name: news_feed
+        file: data/news.json
+        fields:
+          - {label: Schema Version, name: schemaVersion, widget: hidden, default: 1}
+          - label: Items
+            name: items
+            widget: list
+            summary: "{{fields.title}} — {{fields.date}}"
+            fields:
+              - {label: ID, name: id, widget: string}
+              - {label: Headline, name: title, widget: string}
+              - {label: Date, name: date, widget: string}
+              - {label: Category, name: category, widget: string, default: "News"}
+              - {label: Summary, name: summary, widget: text}
+              - {label: Image, name: image, widget: image, required: false}
+              - {label: Image Description, name: imageAlt, widget: string, required: false}
+              - {label: Status, name: status, widget: select, options: ["draft", "published"], default: "draft"}
+              - {label: Article URL, name: url, widget: string, required: false}
+              - {label: Source / Verification, name: source, widget: string, required: false}
+  - name: announcements
+    label: Announcements
+    files:
+      - label: Announcements Feed
+        name: announcements_feed
+        file: data/announcements.json
+        fields:
+          - {label: Schema Version, name: schemaVersion, widget: hidden, default: 1}
+          - label: Items
+            name: items
+            widget: list
+            summary: "{{fields.title}} — {{fields.date}}"
+            fields:
+              - {label: ID, name: id, widget: string}
+              - {label: Title, name: title, widget: string}
+              - {label: Date, name: date, widget: string}
+              - {label: Category, name: category, widget: string, default: "Announcement"}
+              - {label: Summary, name: summary, widget: text}
+              - {label: Full announcement, name: body, widget: markdown, required: false}
+              - {label: Status, name: status, widget: select, options: ["draft", "published"], default: "draft"}
+              - {label: Image, name: image, widget: image, required: false}
+              - {label: Source / Contact, name: source, widget: string, required: false}
+  - name: gallery
+    label: Gallery
+    files:
+      - label: Gallery Feed
+        name: gallery_feed
+        file: data/gallery.json
+        fields:
+          - {label: Schema Version, name: schemaVersion, widget: hidden, default: 1}
+          - label: Photos
+            name: items
+            widget: list
+            summary: "{{fields.title}} — {{fields.date}}"
+            fields:
+              - {label: ID, name: id, widget: string}
+              - {label: Title, name: title, widget: string}
+              - {label: Date, name: date, widget: string, required: false}
+              - {label: Caption, name: caption, widget: text}
+              - {label: Image, name: image, widget: image}
+              - {label: Image Description, name: imageAlt, widget: string}
+              - {label: Status, name: status, widget: select, options: ["draft", "published"], default: "draft"}

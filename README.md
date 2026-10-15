@@ -1,2 +1,1 @@
-# babs4oyha
-The Official Website of Hon. Babatunde Sunday Ogunlade House of Assembly Candidate of the All Progressives Congress APC in Ibarapa East 
+Place approved profile photos here. Suggested names: `babatunde-ogunlade-portrait.jpg` and `babatunde-ogunlade-professional-photo.jpg`.
